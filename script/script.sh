@@ -1,30 +1,16 @@
 #!/bin/bash
 
-##### Variables #####
-# path to directory of backup script
-source_dir="/mnt/c/Users/lucia/PycharmProjects/AutomatedBackupBashScript/script" # change to your own
-# path to directory of backup file
-destination_dir="/mnt/c/Users/lucia/PycharmProjects/AutomatedBackupBashScript/backup" # change to your own
-# name given to backup file folder at the end
+##### Getting Variables Data #####
+read -p "Enter path to directory of backup script: " source_dir
+# example: /mnt/c/Users/lucia/PycharmProjects/AutomatedBackupBashScript/script
+read -p "Enter path to directory of backup file: " destination_dir
+# example: /mnt/c/Users/lucia/PycharmProjects/AutomatedBackupBashScript/backup
 backup_file_name="backup_$(date '+%Y-%m-%d_%H:%M:%S').tar.gz"
-echo $backup_file_name
 
-# 2. Create a Group
-
-
-# 3. Configure Group Permissions
-
-
-# 4. Create a User
-
-
-# 5. Schedule the Backup Script with Cron
-
-
-# 6. Testing
-
-
-# 7. Automation and Monitoring
-
+# checking path are for directories
+if [ ! -d $source_dir -o ! -d $destination_dir ]; then
+  echo "ERROR: Source and destination should be directories."
+  exit 1
+fi
 
 
