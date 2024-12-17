@@ -6,7 +6,8 @@ source_dir="/mnt/c/Users/lucia/PycharmProjects/AutomatedBackupBashScript/script"
 # path to directory of backup file
 destination_dir="/mnt/c/Users/lucia/PycharmProjects/AutomatedBackupBashScript/backup" # change to your own
 # name given to backup file folder at the end
-backup_file_name="backup_$date.tar.gz"
+backup_file_name="backup_$(date '+%Y-%m-%d_%H:%M:%S').tar.gz"
+echo $backup_file_name
 
 # 2. Create a Group
 
