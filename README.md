@@ -1,9 +1,10 @@
 Automated Backup Bash Script. 
 
-## Steps To Make Before Running Script: </br>
-1. Create the Backup Script:
-   - create a directory for the script and for the backup.
-   - in the script directory, create the script and make it executable:</br>
+## Steps To Make: </br>
+1. Setting up the Backup Script:
+   - create a directory for the script and place it there.
+   - set up "source directory" and "destination directory".
+   - make the script executable:</br>
      **chmod u+x script.sh**
 2. Create a Group:
    - use the groupadd command to create a new group named "backupusers":</br>
@@ -20,5 +21,8 @@ Automated Backup Bash Script.
    **sudo usermod -a -G backupusers backupuser**
    - Set a password for the new user:</br>
    **sudo passwd backupuser**
-5. Schedule the Backup Script with Cron:
-   .......
+5. Schedule the Backup Script to run automatically with a Cron Job:
+   - open the crontab for the "backupuser":</br>
+   **sudo crontab -u backupuser -e**
+   - schedule the backup script to run daily at 12:00 PM :</br>
+   **0 12 * * * /path/to/script.sh**
