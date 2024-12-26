@@ -26,3 +26,6 @@ Automated Backup Bash Script.
    **sudo crontab -u backupuser -e**
    - schedule the backup script to run daily at 12:00 PM :</br>
    **0 12 * * * /path/to/script.sh**
+6. Testing:
+   - manually testing the script to ensure it works:</br>
+   **sudo -u backupuser /path/to/script.sh**
